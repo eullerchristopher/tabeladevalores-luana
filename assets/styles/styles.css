@@ -1,0 +1,873 @@
+/*=============== FONT ===============*/
+
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat+Alternates:wght@400;500;600&display=swap');
+
+/*=============== CONFIG ===============*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+    border: none;
+    outline: none;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+
+body {
+    background-color: #FCD0D9;
+    margin: 5rem 0 0 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin-inline: 1.5rem;
+}
+
+.main {
+    overflow: hidden;
+}
+
+
+.section_title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-top: 5rem;  
+    position: relative;
+}
+
+/*=============== HEADER E NAV ===============*/
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(132, 137, 141, 0.25);
+    background-color: transparent;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+}
+
+.nav_logo a{
+    color: black;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.nav_toggle,
+.nav_close{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+    
+}
+
+/* BLUR NO HEADER */
+
+.blur-header::after {
+    content: '';
+    position: absolute;
+    width: 1000%;
+    height: 100%;
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); 
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Navegação em dispositivos móveis */
+@media screen and (max-width: 1200px) {
+    .nav_menu {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        top: 0;
+        right: -100%;  
+        width: 80%;
+        height: 100%;
+        background-color: white;
+       /* background-color: hsla(316, 100%, 83%, 0.2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);*/ 
+        padding: 3rem;  
+        transition: right 0.4s ease-in-out;  
+        box-sizing: border-box;
+    }
+
+    .nav_list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+        padding-top: 3rem;  
+    }
+
+    .nav_link {
+        position: relative;
+        color: black;
+        font-weight: 400;
+        font-size: 1.1rem;
+        transition: color 0.4s;
+    }
+
+    .nav_link:hover {
+        color: rgb(255, 240, 240);
+    }
+
+    .nav_sociais {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav_sociais a{
+        font-size: 1.4rem;
+        font-weight: 550;
+        color: #FCD0D9;
+        transition: color 0.4s;
+    }
+
+    .nav_sociais a:hover {
+        color: rgb(255, 240, 240);
+    }
+
+    /* Botão de fechar no menu */
+    .nav_close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        cursor: pointer;  /* Adiciona um cursor de ponteiro */
+    }
+
+    /* Mostra o menu quando a classe .show-menu for adicionada */
+    .show-menu {
+        right: 0;  /* Move o menu para a posição visível */
+    }
+}
+
+/*Navegação Dispositivos Grandes*/
+
+@media screen and (min-width: 1200px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .nav_list {
+        display: flex;
+        flex-direction: row;  
+        gap: 2rem;  
+    }
+
+    .nav_link {
+        position: relative;
+        color: black;
+        font-weight: 500;
+    }
+
+    /* Estilo do botão de fechar (provavelmente um ícone de fechar no menu) */
+    .nav_close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    /* Exibe o menu se a classe show-menu for adicionada */
+    .show-menu {
+        right: 0;
+        transform: translateX(0); /* Exemplo: mover para a posição original */
+        transition: transform 0.3s ease;
+    }
+
+    .nav_sociais {
+        display: none;
+    }
+
+    .nav_toggle,
+    .nav_close {
+        display: none;
+    }
+}
+
+
+/*=============== HOME ===============*/
+
+.home_data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+}
+
+.home_data img {
+    width: 50vw; 
+}
+
+.home_sociais {
+    background-color: white;
+    padding: 0.7rem;
+    border-radius: 1rem;
+}
+
+.home_sociais a {
+    font-size: 2.1rem;
+    font-weight: 550;
+    color: #FCD0D9;
+    margin: 0 1.3rem;
+    transition: 0.5s ease-in-out;
+}
+
+.home_sociais a:hover {
+    transform: translateY(-.5rem);
+}
+
+/*=============== AlONGAMENTOS ===============*/
+
+.alongamento {
+    background-color: white;
+    border-radius: 3rem 3rem 0 0;
+}
+
+.alongamento_data {
+    margin-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+
+.alongamento_cards {
+    display: flex;
+    justify-content: center;
+    gap: 4rem; 
+}
+
+.alongamento_card {
+    position: relative;
+    background-color: white;
+    padding: 9.25rem .75rem 2rem;
+    border-radius: 2%;
+    z-index: 10;
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.3);
+    text-align: center;
+}
+
+.alongamento_img {
+    position: absolute;
+    top: -6rem;
+    left: 0;
+    right: 0;
+    right: 0;
+    width: 250px;
+    margin: 0 auto;
+    filter: drop-shadow(0 12px 24px hsla(0, 0%, 0%, .4));
+    transition: transform .4s;
+}
+
+
+.alongamento_img2 {
+    position: absolute;
+    top: -11rem;
+    left: 0;
+    right: 0;
+    right: 0;
+    width: 250px;
+    margin: 0 auto;
+    filter: drop-shadow(0 12px 24px hsla(0, 0%, 0%, .4));
+    transition: transform .4s;
+}
+
+.alongamento_card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.alongamento_card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.alongamento_card p {
+    margin-bottom: 1rem;
+}
+
+.alongamento_card a{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color:  rgb(255, 240, 240);
+    color: black;
+    border-radius: 0.5rem; 
+    font-size: 1.2rem; 
+    transition: 0.3s ease-in-out;
+}
+
+.alongamento_card:hover .alongamento_img {
+    transform: translateY(-.5rem);
+} 
+
+.alongamento_card:hover .alongamento_img2 {
+    transform: translateY(-.5rem);
+}
+
+/*=============== BANHO GEL ===============*/
+
+.banhodegel_background {
+    background-color: #FCD0D9;
+    border-radius: 3rem 3rem 0 0;
+}
+
+.banhodegel {
+    background-color: #ffffff;
+}
+
+.banhodegel_data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.banhogel_cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.banhogel_card {
+    background-color: white;
+    padding: 2rem;
+    transition: 0.5s ease-in-out;
+    border-radius: 0.5rem;
+}
+
+.banhogel_card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.banhogel_card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color:  rgb(255, 240, 240);
+    color: black;
+    border-radius: 0.5rem; 
+    font-size: 1.2rem; 
+}
+
+.banhogel_card p {
+    margin-bottom: 1rem;
+}
+
+.banhogel_img img {
+    width: 20vw;
+    border-radius: 0.5rem;   
+    filter: drop-shadow(0 12px 24px hsla(0, 0%, 0%, .4));
+}
+
+.banhogel_card:hover {
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.3);
+}
+
+/*=============== MANUTENÇÕES ===============*/
+
+.manutencoes {
+    background-color: white;
+    border-radius: 3rem 3rem 0 0;
+}
+
+.manutencoes_data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding-bottom: 5rem;
+}
+
+.manutencoes_data h3 {
+    transition: 0.3s ease-in-out;
+    padding: 1rem;
+    border-radius: 5%;cursor: pointer;
+}
+
+.manutencoes_data h3:hover {
+    background-color:  rgb(255, 240, 240);
+}
+
+/*=============== RESULTADOS ===============*/
+
+.resultados {
+    background-color: white;
+}
+
+.resultados_background {
+    background-color: #FCD0D9;
+    border-radius: 3rem 3rem 0 0;
+}
+
+.resultados_data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
+    
+  }
+
+.resultados_img {
+    filter: drop-shadow(0 12px 24px hsla(0, 0%, 0%, .4));
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+  
+.resultados_img img {
+    width: 20vw;
+    transition: 1s;
+}
+
+.resultados_img img:hover {
+    transform: scale(1.1);
+}
+
+/*=============== INFORMAÇÕES ===============*/
+
+.informacoes {
+    background-color: white;
+    border-radius: 3rem 3rem 0 0;
+}
+
+.informacoes_data {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+.informacoes_data p {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/*=============== LOCALIZAÇÃO ===============*/
+
+.localizacao_background {
+    background-color: #FCD0D9;
+    border-radius: 3rem 3rem 0 0;
+}
+
+.localizacao {
+    background: white;
+}
+
+.localizacao_data {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    height: 720px;
+}
+
+.localizacao_data iframe {
+    display: flex;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*=============== FOOTER ===============*/
+
+footer {
+    padding: 3rem;
+    background-color: white;
+}
+
+.footer_data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_texto h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer_texto p {
+    font-size: 1.2rem;
+}
+
+.footer_sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    gap: 2rem;
+}
+
+.footer_sociais a{
+    color: #FCD0D9;
+    transition: 0.5s ease-in-out;
+}
+
+.footer_sociais a:hover {
+    transform: translateY(-.5rem);
+}
+
+/*=============== MEDIA QUERY ===============*/
+
+/* Dispositivos móveis (320px a 480px) */
+@media (min-width: 320px) and (max-width: 480px) {
+    .section_title {
+        font-size: 1.5rem;
+    }
+
+    /* Nav */
+
+    .nav_logo a{
+        font-size: 1.4rem;
+    }
+
+    /* Home */
+
+    .home_data {
+        gap: 3rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .home_img img {
+        width: 100vw;
+    }
+
+    .home_sociais {
+        padding: 1rem;
+    }
+
+    .home_sociais a{
+        font-size: 1.5rem;
+        
+    }
+
+    /* Alongamento */
+
+    .alongamento_data {
+        margin-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    .alongamento_cards {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 8rem;
+    }
+
+    .alongamento_img {
+        width: 200px;
+        top: -4rem;
+    }
+
+    .alongamento_img2 {
+        width: 190px;
+        top: -6rem;
+    }
+
+    /* Banho Gel */
+
+    .banhodegel_data {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 5rem;
+    }
+
+    .banhogel_card h3 {
+        font-size: 1.1rem;
+    }
+
+    .banhogel_img img {
+        width: 60vw;
+    }
+
+    /* Manutenções */
+
+    .manutencoes_data {
+        flex-direction: column;
+        margin-top: 1rem;
+        gap: 2rem;
+    }
+
+    /* Resultados */
+
+    .resultados_data {
+        grid-template-columns: repeat(1, 1fr); 
+        align-items: center; 
+        justify-items: center; 
+    }
+
+    .resultados_img img{
+        width: 80vw;
+    }
+
+    /* Informações */
+
+
+
+    .informacoes_data p {
+        font-size: 1.1rem;
+    }
+
+    /* Localização */
+
+    .localizacao_data {
+        height: 500px;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 3rem 0;
+    }
+
+    .footer_data {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+}
+
+/* iPads e tablets (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .section_title {
+        font-size: 1.5rem;
+    }
+
+    /* Nav */
+
+    .nav_logo a{
+        font-size: 1.4rem;
+    }
+
+    /* Home */
+
+    .home_data {
+        gap: 3rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .home_img img {
+        width: 100vw;
+    }
+
+    .home_sociais {
+        padding: 1rem;
+    }
+
+    .home_sociais a{
+        font-size: 1.5rem;
+        
+    }
+
+    /* Alongamento */
+
+    .alongamento_data {
+        margin-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    .alongamento_cards {
+        flex-direction: column;
+        padding: 5rem;
+        gap: 8rem;
+        flex-wrap: wrap;
+    }
+
+    .alongamento_img {
+        width: 200px;
+        top: -4rem;
+    }
+
+    .alongamento_img2 {
+        width: 190px;
+        top: -6rem;
+    }
+
+    /* Banho Gel */
+
+    .banhodegel_data {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 5rem;
+    }
+
+    .banhogel_img img {
+        width: 40vw;
+    }
+
+    /* Manutenções */
+
+    .manutencoes_data {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    /* Resultados */
+
+    .resultados_data {
+        grid-template-columns: repeat(2, 1fr); 
+        align-items: center; 
+        justify-items: center; 
+    }
+
+    .resultados_img img{
+        width: 80vw;
+    }
+
+    /* Informações */
+
+   
+
+    .informacoes_data p {
+        font-size: 1.1rem;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 3rem 0;
+    }
+
+    .footer_data {
+        
+        gap: 2rem;
+    }
+
+}
+
+/* Telas pequenas e laptops (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section_title {
+        font-size: 1.5rem;
+    }
+
+    /* Nav */
+
+    .nav_logo a{
+        font-size: 1.6rem;
+    }
+
+    /* Home */
+
+    .home_data {
+        gap: 3rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .home_img img {
+        width: 60vw;
+    }
+
+    .home_sociais {
+        padding: 1rem;
+    }
+
+    .home_sociais a{
+        font-size: 1.7rem;
+        
+    }
+
+    /* Alongamento */
+
+    .alongamento_data {
+        margin-top: 7rem;
+        padding-bottom: 7rem;
+    }
+
+    .alongamento_img {
+        width: 200px;
+        top: -4rem;
+    }
+
+    .alongamento_img2 {
+        width: 190px;
+        top: -6rem;
+    }
+
+    /* Banho Gel */
+
+    .banhodegel_data {
+       
+        text-align: center;
+        gap: 5rem;
+    }
+
+    .banhogel_img img {
+        width: 40vw;
+    }
+
+    /* Manutenções */
+
+    .manutencoes_data {
+       text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Resultados */
+
+    .resultados_data {
+        grid-template-columns: repeat(2, 1fr); 
+        align-items: center; 
+        justify-items: center; 
+    }
+
+    .resultados_img img{
+        width: 80vw;
+    }
+
+    /* Informações */
+
+    
+
+    .informacoes_data p {
+        font-size: 1.1rem;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 3rem 0;
+    }
+
+    .footer_data {
+        gap: 2rem;
+    }
+}
